@@ -17,7 +17,7 @@ jobs:
       - name: Index creation
         shell: bash
         run: |
-          rm .index-extended
+          rm .index-extended || true
           for d in "Named_Boxarts" "Named_Snaps" "Named_Titles" "Named_Logos" ;
           do
             if [[ -d $d ]] ; then
