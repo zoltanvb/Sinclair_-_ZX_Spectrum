@@ -19,6 +19,7 @@ jobs:
       - name: Index creation
         shell: bash
         run: |
+          sudo apt-get install -y libarchive-zip-perl
           echo "" > .index-extended
           for d in "Named_Boxarts" "Named_Snaps" "Named_Titles" "Named_Logos" ;
           do
