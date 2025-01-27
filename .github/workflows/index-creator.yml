@@ -25,7 +25,7 @@ jobs:
           do
             if [[ -d $d ]] ; then
               cd $d
-              for f in *.png ; do echo `date -r "$f" "+%Y-%m-%d"` `crc32 "$f"` $d/"$f" ; done >> ../.index-extended
+              for f in *.png ; do echo `git log -1 --pretty="format:%cs" "$f"` `crc32 "$f"` $d/"$f" ; done >> ../.index-extended
               cd ..
             fi
           done
